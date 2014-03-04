@@ -1,0 +1,12 @@
+Source: libvmod-hash
+Section: web
+Priority: extra
+Maintainer: Boris Guéry <guery.b@gmail.com>
+Build-Depends: debhelper (>= 7), build-essential, python-docutils
+Standards-Version: 3.8.1
+Vcs-Git: git://github.com/borisguery/libvmod-hash.git
+
+Package: libvmod-hash
+Architecture: any
+Depends: varnish, ${Varnish:ABI}, ${misc:Depends}
+Description: hash vmod to easily fetch req.hash

@@ -1,0 +1,3 @@
+Module hash
+Init init_function
+Function STRING get_req_hash()

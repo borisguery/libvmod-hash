@@ -1,0 +1,23 @@
+varnishtest "test hash vmod"
+
+server s1 {
+       rxreq
+       txresp
+} -start
+
+varnish v1 -vcl+backend {
+	import hash from "${vmod_topbuild}/src/.libs/libvmod_hash.so";
+
+	sub vcl_deliver {
+		set resp.http.X-Req-Hash = hash.get_req_hash();
+	}
+} -start
+
+client c1 {
+	txreq -url "/"
+	rxresp
+	# this hash has been precomputed from known values
+	expect resp.http.X-Req-Hash == "5acd809541f59fa5af2d11b83cd611d20d35267c2107480c0603d8e04569a03b"
+}
+
+client c1 -run
