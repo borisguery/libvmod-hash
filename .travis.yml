@@ -6,6 +6,7 @@ before_install:
 before_script:
   - apt-get source -q varnish
   - cd varnish*
+  - mkdir m4
   - ./configure
   - make
   - cd ..
