@@ -2,6 +2,10 @@
 vmod_hash
 ============
 
+.. image:: https://api.travis-ci.org/borisguery/libvmod-hash.png
+    :target: https://travis-ci.org/borisguery/libvmod-hash
+
+
 ----------------------
 Varnish Hash Module
 ----------------------
